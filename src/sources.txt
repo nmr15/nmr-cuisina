@@ -1,0 +1,32 @@
+banner
+Image by <a href="https://www.freepik.com/free-psd/all-you-can-eat-restaurant-youtube-banner-template_31213320.htm#query=restaurant%20website%20banner&position=2&from_view=search&track=ais">Freepik</a>
+
+main image 1
+Photo by <a href="https://unsplash.com/@cant89?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Davide Cantelli</a> on <a href="https://unsplash.com/photos/jpkfc5_d-DI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+main image 2
+Photo by <a href="https://unsplash.com/@meeuwesen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">M.S. Meeuwesen</a> on <a href="https://unsplash.com/photos/QYWYnzvPTAQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+menu fries
+Photo by <a href="https://unsplash.com/@louishansel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Louis Hansel</a> on <a href="https://unsplash.com/photos/vi0kZuoe0-8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+menu chips
+Photo by <a href="https://unsplash.com/@taiscaptures?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tai's Captures</a> on <a href="https://unsplash.com/photos/6cguFN39fKU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+menu wings
+Photo by <a href="https://unsplash.com/@dan_fromyesmorecontent?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Daniel Hooper</a> on <a href="https://unsplash.com/photos/PaaboPF3dVY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+menu burger 1
+Photo by <a href="https://unsplash.com/@amir_v_ali?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">amirali mirhashemian</a> on <a href="https://unsplash.com/photos/mrX35fOWhNM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+menu burger 2
+Photo by <a href="https://unsplash.com/@amir_v_ali?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">amirali mirhashemian</a> on <a href="https://unsplash.com/photos/sc5sTPMrVfk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+menu burger 3
+Photo by <a href="https://unsplash.com/@amir_v_ali?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">amirali mirhashemian</a> on <a href="https://unsplash.com/photos/jh5XyK4Rr3Y?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+menu-sandwich
+Photo by <a href="https://unsplash.com/@oneshotespresso?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Hans Vivek</a> on <a href="https://unsplash.com/photos/mBu44hd3ea0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+menu soda
+Photo by <a href="https://unsplash.com/@sorinpopa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">sorin popa</a> on <a href="https://unsplash.com/photos/F6zJEnVv6to?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
