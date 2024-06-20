@@ -1,0 +1,115 @@
+body,
+html {
+  height: 100%;
+}
+
+.bg-red {
+  background-color: #D63D35;
+}
+
+.btn-red {
+  border: 0;
+  color: #ffffff;
+  font-size: 20px;
+  background: #D63D35;
+  padding: 16px 35px 16px 35px;
+  text-decoration: none;
+}
+
+.heading {
+  font-family: "Playfair Display", serif;
+  font-size: 50px;
+}
+
+.text-white {
+  color: #fff;
+}
+
+/*------------------------------
+            Navbar
+---------------------------------*/
+.navbar-logo {
+  width: 100px;
+}
+
+.navbar-nav {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+
+/*------------------------------
+            Home
+---------------------------------*/
+
+.banner {
+  background-image: url("../public/assets/banner-dark.jpg");
+  height: 700px;
+  /* filter: brightness(50%); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.banner-text {
+  position: absolute;
+  color: #fff;
+}
+
+.section-advert1 {
+  /* background-color: #D63D35; */
+}
+
+.advert1 {
+  padding: 120px 0;
+}
+
+.advert1-text {
+  width: 30rem;
+}
+
+.advert1-text h2 {
+  font-size: 50px;
+}
+
+.section-favorites {
+  /* background-color: lightskyblue; */
+}
+
+/*------------------------------
+            Menu
+---------------------------------*/
+
+.menu-categories {
+  cursor: pointer;
+}
+
+.menu-card {
+  width: 415px;
+  border: 1px solid #D3D3D3;
+  border-radius: 10px;
+}
+
+.menu-card-heading {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+}
+
+/*------------------------------
+            Footer
+---------------------------------*/
+
+.footer {
+  background-color: #000;
+  color: #E9ECEF;
+}
+
+
+@media (max-width: 767.98px) {
+  .advert1-img img {
+    width: 90%;
+  }
+}
