@@ -71,7 +71,7 @@ export const menu = [
   },
   {
     id: "a8e08a9afbce44fd8c32b79a423b9228",
-    name: "Ham Sandiwch",
+    name: "Ham Sandwich",
     price: 12.99,
     image: "/assets/menu-sandwich-2.jpg",
     category: "Sandwiches"

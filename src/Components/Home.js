@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from "react-router-dom"
 
 const Home = () => 
 {
@@ -35,25 +35,45 @@ const Home = () =>
       <section className="section-favorites">
         <div className="container">
           <h1 className="heading text-center">Customer Favorites</h1>
-          <div className="row favorites">
-            <div className="col-md-4">
+          <div className="row favorites g-3">
+            <div className="col-md">
               <div className="menu-card">
                 <img className="card-img-top" src="/assets/menu-burger-2.jpg" alt="" />
-                <h3 className="menu-card-heading mt-3 px-4">Cheeseburger</h3>
+                <div className="menu-card-body">
+                  <h5 className="menu-card-heading">Cheeseburger</h5>
+                  <p className="menu-card-desc">In hac habitasse platea dictumst. Maecenas vehicula purus sit amet.</p>
+                  <h4 className="menu-card-price">$11.99</h4>
+                  <Link to="/order" className="btn-red-pill hvr-fade">Order Now</Link>
+                </div>
               </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-md">
               <div className="menu-card">
                 <img className="card-img-top" src="/assets/menu-ribs.jpg" alt="" />
+                <div className="menu-card-body">
+                  <h5 className="menu-card-heading">Rack of Ribs</h5>
+                  <p className="menu-card-desc">In hac habitasse platea dictumst. Maecenas vehicula purus sit amet.</p>
+                  <h4 className="menu-card-price">$25.99</h4>
+                  <Link to="/order" className="btn-red-pill hvr-fade">Order Now</Link>
+                </div>
               </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-md">
               <div className="menu-card">
                 <img className="card-img-top" src="assets/menu-sandwich-2.jpg" alt="" />
+                <div className="menu-card-body">
+                  <h5 className="menu-card-heading">Ham Sandwich</h5>
+                  <p className="menu-card-desc">In hac habitasse platea dictumst. Maecenas vehicula purus sit amet.</p>
+                  <h4 className="menu-card-price">$12.99</h4>
+                  <Link to="/order" className="btn-red-pill hvr-fade">Order Now</Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
+      <section className="section-reservation">
+        
       </section>
     </>
   )
