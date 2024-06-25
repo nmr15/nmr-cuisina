@@ -7,11 +7,10 @@ const Menu = () =>
 
   useEffect(() =>
   {
-    setMenuItems(menu);
+    setMenuItems(menu.filter(menu => menu.category === "Appetizers"));
   }, []);
 
   const filtered = [...new Set(menu.map(item => item.category))];
-  
 
   let clickHandler = (e) =>
   {
@@ -24,19 +23,20 @@ const Menu = () =>
       <section className="section-categories bg-red py-2">
         <div className="menu-categories text-white d-flex justify-content-center">
           {filtered.map(category =>
-            <h4 className="mx-3" id={category} onClick={clickHandler}>{category}</h4>
+            <h5 className="mx-3 ptr" id={category} onClick={clickHandler}>{category}</h5>
           )}
         </div>
       </section>
       <section className="section-menu">
         <div className="container">
-          <div className="row menu">
+          {/* <h2>{menuItems ? menuItems[0].category : "Appetizers"}</h2> */}
+          <div className="row menu g-3">
             {menuItems.map((menuItem) => (
               <div className="col-md-4" key={menuItem.key}>
-                <div className="card">
+                <div className="menu-card hvr-shrink ptr">
                   <img className="card-img-top" src={menuItem.image} alt="" />
-                  <div className="card-body">
-                    <h3 className="card-title">{menuItem.name}</h3>
+                  <div className="menu-card-body">
+                    <h5 className="menu-card-heading-2">{menuItem.name}</h5>
                   </div>
                 </div>
                 
