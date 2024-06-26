@@ -200,12 +200,44 @@ input:focus, select:focus
             Reservation
 ---------------------------------*/
 
+.bg-reserve
+{
+  background-image: url("../public/assets/bg-restaurant.jpg");
+  background-size: cover;
+  
+}
+
+.reserve-container
+{
+  padding: 200px 450px;
+}
+
 .reserve
 {
-  /* max-width: 31.25rem; */
-  margin: 100px 450px;
-  padding: 16px;
+  max-width: 31.25rem;
+  /* margin: 100px 450px; */
+  padding: 1.875rem;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
 }
+
+/* .reserve-form, .form-select
+{
+  color: #fff !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.reserve-form::placeholder
+{
+  color: #fff;
+}
+
+.reserve-form:focus
+{
+  border-color: #fff !important;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0);
+} */
 
 /*------------------------------
             Footer
