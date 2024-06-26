@@ -142,20 +142,23 @@ input:focus, select:focus
   color: #fff;
 }
 
-.section-advert1, .section-favorites
+@media (min-width: 1400px)
 {
-  padding: 120px 0;
+  .section-advert1,
+    .section-favorites {
+      padding: 120px 0;
+    }
+  
+    .advert1-text {
+      width: 30rem;
+    }
+  
+    .advert1-text h2 {
+      font-size: 50px;
+    }
 }
 
-.advert1-text 
-{
-  width: 30rem;
-}
 
-.advert1-text h2 
-{
-  font-size: 50px;
-}
 
 
 /*------------------------------
