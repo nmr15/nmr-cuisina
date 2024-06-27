@@ -7,7 +7,7 @@ const Reservation = () =>
     <div className="bg-reserve">
 
     
-      <div className="container reserve-container">
+      <div className="container reserve-container d-flex justify-content-center">
         <div className="reserve">
           <form>
             <div className="mb-3">

@@ -13,7 +13,7 @@ const Home = () =>
       </section>
       <section className="section-advert1">
         <div className="container">
-          <div className="advert1 d-flex">
+          <div className="advert1 d-md-flex">
             <div className="advert1-img ">
               <img className="" src="/assets/home-plate.jpg" alt="plate of food" />
             </div>
