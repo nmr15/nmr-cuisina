@@ -11,13 +11,13 @@ const Home = () =>
           </div>
         </div>
       </section>
-      <section className="section-advert1">
+      <section className="section-aboutus">
         <div className="container">
-          <div className="advert1 d-md-flex">
-            <div className="advert1-img ">
+          <div className="aboutus d-md-flex">
+            <div className="aboutus-img ">
               <img className="" src="/assets/home-plate.jpg" alt="plate of food" />
             </div>
-            <div className="advert1-text ">
+            <div className="aboutus-text ">
               <h2>Delicious food all around</h2>
               <p>
                 Ut pellentesque vel metus vel pretium. Maecenas dictum id dolor quis
