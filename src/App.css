@@ -1,6 +1,7 @@
 body, html 
 {
   height: 100%;
+  font-family: "DM Sans", sans-serif;
 }
 
 input:focus, select:focus
@@ -130,10 +131,10 @@ ul
   text-transform: uppercase;
 }
 
-.nav-link-active
+/* .nav-link-active
 {
   border-bottom: 1px solid #000;
-}
+} */
 
 
 /*------------------------------
@@ -203,6 +204,7 @@ ul
 {
   margin-bottom: 0.625rem;
   font-size: 18px;
+  font-weight: 700;
 }
 
 .menu-card-heading-2
@@ -222,8 +224,6 @@ ul
   background-color: #D63D35;
 }
 
-
-
 .menu-dropdown-list
 {
   overflow: hidden;
@@ -233,9 +233,35 @@ ul
 
 .menu-dropdown-list-active
 {
-  height: 100%;
+  height: 140px;
   overflow: auto;
   transition: height 0.3s ease;
+}
+
+/*------------------------------
+            Order
+---------------------------------*/
+
+.ordertype-card
+{
+  margin: 0 1rem;
+  padding: 2rem;
+  border: 2px solid var(--base-red);
+  cursor: pointer;
+  text-align: center;
+  color: var(--base-red);
+  transition: all 0.3s ease-in;
+}
+
+.ordertype-card:hover
+{
+  color: #fff;
+  background-color: var(--base-red);
+}
+
+.ordertype-card-icon
+{
+  font-style: 10rem;
 }
 
 /*------------------------------

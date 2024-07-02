@@ -38,26 +38,8 @@ const Menu = () =>
           </div>
         </MediaQuery>
         <MediaQuery maxWidth={768}>
-          {/* <div class="accordion" id="accordion-menu">
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Select
-                </button>
-              </h2>
-              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordion-menu">
-                <div class="accordion-body">
-                  {filtered.map(category =>
-                    <ul>
-                      <li id={category} onClick={clickHandler}>{category}</li>
-                    </ul>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div> */}
           <div className="menu-dropdown">
-            <h5 className="menu-dropdown-btn text-center" onClick={toggleDropdown}>Menu Select</h5>
+            <h5 className="menu-dropdown-btn text-center" onClick={toggleDropdown}>Menu Select <i class="bi bi-caret-down-fill"></i></h5>
             <ul className={dropDown ? "menu-dropdown-list-active" : "menu-dropdown-list"} >
               {filtered.map(category =>
                 <ul>
@@ -75,7 +57,7 @@ const Menu = () =>
           <div className="row menu g-3">
             {menuItems.map((menuItem) => (
               <div className="col-md-4" key={menuItem.key}>
-                <div className="menu-card hvr-shrink ptr">
+                <div className="menu-card ptr">
                   <img className="card-img-top" src={menuItem.image} alt="" />
                   <div className="menu-card-body">
                     <h5 className="menu-card-heading-2">{menuItem.name}</h5>
