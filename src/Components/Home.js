@@ -18,7 +18,7 @@ const Home = () =>
               <img className="" src="/assets/home-plate.jpg" alt="plate of food" />
             </div>
             <div className="aboutus-text ">
-              <h2>Delicious food all around</h2>
+              <h2 className="heading">Delicious food all around</h2>
               <p>
                 Ut pellentesque vel metus vel pretium. Maecenas dictum id dolor quis
                 vulputate. Praesent blandit semper neque eu interdum. Mauris vitae

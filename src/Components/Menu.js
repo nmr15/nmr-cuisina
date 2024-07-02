@@ -5,6 +5,7 @@ import MediaQuery from "react-responsive";
 const Menu = () => 
 {
   const [menuItems, setMenuItems] = useState([]);
+  const [dropDown, setDropDown] = useState(false);
 
   useEffect(() =>
   {
@@ -17,6 +18,11 @@ const Menu = () =>
   {
     let cat = e.target.id;
     setMenuItems(menu.filter(menu => menu.category === cat));
+  }
+
+  let toggleDropdown = () => 
+  {
+    setDropDown(!dropDown);
   }
 
   return (
@@ -32,14 +38,14 @@ const Menu = () =>
           </div>
         </MediaQuery>
         <MediaQuery maxWidth={768}>
-          <div class="accordion" id="accordionExample">
+          {/* <div class="accordion" id="accordion-menu">
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                   Select
                 </button>
               </h2>
-              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordion-menu">
                 <div class="accordion-body">
                   {filtered.map(category =>
                     <ul>
@@ -49,6 +55,16 @@ const Menu = () =>
                 </div>
               </div>
             </div>
+          </div> */}
+          <div className="menu-dropdown">
+            <h5 className="menu-dropdown-btn text-center" onClick={toggleDropdown}>Menu Select</h5>
+            <ul className={dropDown ? "menu-dropdown-list-active" : "menu-dropdown-list"} >
+              {filtered.map(category =>
+                <ul>
+                  <li className="dropdown-item text-center" id={category} onClick={clickHandler}>{category}</li>
+                </ul>
+              )}
+            </ul> 
           </div>
         </MediaQuery>
       </section>

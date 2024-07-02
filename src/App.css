@@ -9,9 +9,19 @@ input:focus, select:focus
   box-shadow: none !important;
 }
 
+:root
+{
+  --base-red: #D63D35;
+}
+
+ul
+{
+  padding: 0;
+}
+
 .bg-red 
 {
-  background-color: #D63D35;
+  background-color: var(--base-red);
 }
 
 .btn-red 
@@ -19,7 +29,7 @@ input:focus, select:focus
   border: 0;
   color: #ffffff;
   font-size: 20px;
-  background: #D63D35;
+  background: var(--base-red);
   padding: 16px 35px 16px 35px;
   text-decoration: none;
 }
@@ -29,7 +39,7 @@ input:focus, select:focus
   border: 0;
   color: #ffffff;
   font-size: 16px;
-  background: #D63D35;
+  background: var(--base-red);
   padding: 6px 12px;
   text-decoration: none;
 }
@@ -120,6 +130,11 @@ input:focus, select:focus
   text-transform: uppercase;
 }
 
+.nav-link-active
+{
+  border-bottom: 1px solid #000;
+}
+
 
 /*------------------------------
             Home
@@ -201,6 +216,28 @@ input:focus, select:focus
   margin: 0.625rem 0;
 }
 
+.menu-dropdown
+{
+  color: #fff;
+  background-color: #D63D35;
+}
+
+
+
+.menu-dropdown-list
+{
+  overflow: hidden;
+  height: 0px;
+  transition: height 0.3s ease;
+}
+
+.menu-dropdown-list-active
+{
+  height: 100%;
+  overflow: auto;
+  transition: height 0.3s ease;
+}
+
 /*------------------------------
             Reservation
 ---------------------------------*/
@@ -226,23 +263,6 @@ input:focus, select:focus
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* .reserve-form, .form-select
-{
-  color: #fff !important;
-  background-color: rgba(0, 0, 0, 0) !important;
-}
-
-.reserve-form::placeholder
-{
-  color: #fff;
-}
-
-.reserve-form:focus
-{
-  border-color: #fff !important;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0);
-} */
 
 /*------------------------------
             Footer
