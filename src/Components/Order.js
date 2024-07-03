@@ -5,7 +5,7 @@ const StartOrder = () =>
 
   return (
     <>
-      <div className="container p-5">
+      <div className="container orderstart">
         <h1 className="heading text-center">Start Your Order</h1>
         <div className="ordertype d-flex justify-content-center">
           <div className="ordertype-card" tabIndex="1">
@@ -17,7 +17,7 @@ const StartOrder = () =>
             <h5>Delivery</h5>
           </div>
         </div>
-        <div className="orderlocation">
+        <div className="orderlocation d-flex justify-content-center">
           <select name="location" className="form-select reserve-form">
             <option>Select Location</option>
             <option value="Pomona">Pomona</option>
@@ -25,6 +25,7 @@ const StartOrder = () =>
             <option value="Glendora">Glendora</option>
             <option value="Rancho Cucamonga">Rancho Cucamonga</option>
           </select>
+          <button className="btn-red-small">Continue</button>
         </div>
       </div>
     </>

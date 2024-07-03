@@ -242,6 +242,12 @@ ul
             Order
 ---------------------------------*/
 
+.orderstart
+{
+  margin-bottom: 11.5rem;
+  padding: 3rem;
+}
+
 .ordertype-card
 {
   margin: 0 1rem;
@@ -262,6 +268,12 @@ ul
 .ordertype-card-icon
 {
   font-style: 10rem;
+}
+
+.orderlocation
+{
+  width: 40%;
+  margin: 2rem auto 0 auto;
 }
 
 /*------------------------------
@@ -308,6 +320,11 @@ ul
     width: 90%;
   }
 
+  .orderlocation
+  {
+    width: 80%;
+  }
+
   /* .menu-categories-list
   {
     display: none;
@@ -322,6 +339,11 @@ ul
 @media (max-width: 575.98px)
 {
   .aboutus-text 
+  {
+    width: 100%;
+  }
+
+  .orderlocation
   {
     width: 100%;
   }
