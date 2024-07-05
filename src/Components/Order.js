@@ -2,17 +2,26 @@ import { useState, useEffect } from 'react';
 
 const StartOrder = () =>
 {
+  const [isSelected, setIsSelected] = useState('pickup');
+
+  const isPickup = isSelected === "pickup";
+  const isDelivery = isSelected === "delivery";
+
+  const handleClick = () =>
+  {
+
+  }
 
   return (
     <>
       <div className="container orderstart">
         <h1 className="heading text-center">Start Your Order</h1>
         <div className="ordertype d-flex justify-content-center">
-          <div className="ordertype-card" id="pickup" tabIndex="1">
+          <div className={isPickup ? "ordertype-card-selected" : "ordertype-card"} id="pickup" tabIndex="1" onClick={() => setIsSelected('pickup')}>
             <i class="bi bi-bag-fill" style={{fontSize: "2rem"}}></i>
             <h5>Pickup</h5>
           </div>
-          <div className="ordertype-card" id="delivery" tabIndex="2">
+          <div className={isDelivery ? "ordertype-card-selected" : "ordertype-card"} id="delivery" tabIndex="2" onClick={() => setIsSelected('delivery')}>
             <i class="bi bi-scooter" style={{ fontSize: "2rem" }}></i>
             <h5>Delivery</h5>
           </div>

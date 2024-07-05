@@ -233,7 +233,7 @@ ul
 
 .menu-dropdown-list-active
 {
-  height: 140px;
+  height: 150px;
   overflow: auto;
   transition: height 0.3s ease;
 }
@@ -257,6 +257,17 @@ ul
   text-align: center;
   color: var(--base-red);
   transition: all 0.3s ease-in;
+}
+
+.ordertype-card-selected
+{
+  margin: 0 1rem;
+  padding: 2rem;
+  border: 2px solid var(--base-red);
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  background-color: var(--base-red);
 }
 
 .ordertype-card:hover
