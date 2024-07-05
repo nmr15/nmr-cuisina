@@ -8,11 +8,11 @@ const StartOrder = () =>
       <div className="container orderstart">
         <h1 className="heading text-center">Start Your Order</h1>
         <div className="ordertype d-flex justify-content-center">
-          <div className="ordertype-card" tabIndex="1">
+          <div className="ordertype-card" id="pickup" tabIndex="1">
             <i class="bi bi-bag-fill" style={{fontSize: "2rem"}}></i>
             <h5>Pickup</h5>
           </div>
-          <div className="ordertype-card" tabIndex="2">
+          <div className="ordertype-card" id="delivery" tabIndex="2">
             <i class="bi bi-scooter" style={{ fontSize: "2rem" }}></i>
             <h5>Delivery</h5>
           </div>

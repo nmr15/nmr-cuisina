@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { menu } from "../menu"
 import MediaQuery from "react-responsive";
 
@@ -57,10 +58,13 @@ const Menu = () =>
           <div className="row menu g-3">
             {menuItems.map((menuItem) => (
               <div className="col-md-4" key={menuItem.key}>
-                <div className="menu-card ptr">
+                <div className="menu-card">
                   <img className="card-img-top" src={menuItem.image} alt="" />
                   <div className="menu-card-body">
-                    <h5 className="menu-card-heading-2">{menuItem.name}</h5>
+                    <h5 className="menu-card-heading">{menuItem.name}</h5>
+                    <p className="menu-card-desc">In hac habitasse platea dictumst. Maecenas vehicula purus sit amet.</p>
+                    <h4 className="menu-card-price">${menuItem.price}</h4>
+                    <Link to="/order" className="btn-red-pill hvr-fade mt-3">Order Now</Link>
                   </div>
                 </div>
                 
