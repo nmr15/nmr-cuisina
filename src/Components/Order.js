@@ -1,15 +1,51 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const StartOrder = () =>
 {
-  const [isSelected, setIsSelected] = useState('pickup');
+  const [isSelected, setIsSelected] = useState("pickup");
+  const [location, setLocation] = useState("");
+  const [address, setAddress] = useState("");
+
+  const navigate = useNavigate();
 
   const isPickup = isSelected === "pickup";
   const isDelivery = isSelected === "delivery";
 
-  const handleClick = () =>
+  const changeLocation = (e) =>
   {
+    setLocation(e.target.value);
+    console.log(location);
+  }
 
+  const changeAddress = (e) =>
+  {
+    setAddress(e.target.value);
+    console.log(address);
+  }
+
+  const handleSubmit = () =>
+  {
+    if(location === "" || location === "Select location")
+    {
+      alert("Please select a location");
+    }
+    else
+    {
+      navigate("/order/menu");
+    }
+  }
+
+  const handleAddress = () =>
+  {
+    if(address === "")
+    {
+      alert("Please enter delivery address");
+    }
+    else 
+    {
+      navigate("/order/menu");
+    }
   }
 
   return (
@@ -26,16 +62,37 @@ const StartOrder = () =>
             <h5>Delivery</h5>
           </div>
         </div>
-        <div className="orderlocation d-flex justify-content-center">
-          <select name="location" className="form-select reserve-form">
-            <option>Select Location</option>
-            <option value="Pomona">Pomona</option>
-            <option value="Chino">Chino</option>
-            <option value="Glendora">Glendora</option>
-            <option value="Rancho Cucamonga">Rancho Cucamonga</option>
-          </select>
-          <button className="btn-red-small">Continue</button>
-        </div>
+        {isSelected === "pickup" ? <Pickup changeLocation={changeLocation} handleSubmit={handleSubmit} /> : <Delivery changeAddress={changeAddress} handleAddress={handleAddress} />}
+      </div>
+    </>
+  )
+}
+
+const Pickup = ({changeLocation, handleSubmit}) =>
+{
+  return (
+    <>
+      <div className="orderlocation d-flex justify-content-center">
+        <select name="location" className="form-select reserve-form" onChange={(e) => changeLocation(e)}>
+          <option value=""></option>
+          <option value="Pomona">Pomona</option>
+          <option value="Chino">Chino</option>
+          <option value="Glendora">Glendora</option>
+          <option value="Rancho Cucamonga">Rancho Cucamonga</option>
+        </select>
+        <button className="btn-red-small" onClick={() => handleSubmit()}>Continue</button>
+      </div>
+    </>
+  )
+}
+
+const Delivery = ({ changeAddress, handleAddress }) =>
+{
+  return (
+    <>
+      <div className="orderlocation d-flex justify-content-center">
+        <input type="text" className="form-control" placeholder="Enter address" onChange={(e) => changeAddress(e)} />
+        <button className="btn-red-small" onClick={() => handleAddress()}>Continue</button>
       </div>
     </>
   )
