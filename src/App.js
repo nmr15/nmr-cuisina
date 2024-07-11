@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 import Menu from './Components/Menu';
@@ -12,7 +12,47 @@ import Footer from './Components/Footer';
 
 function App() 
 {
+  const [isSelected, setIsSelected] = useState("pickup");
+  const [location, setLocation] = useState("");
+  const [address, setAddress] = useState("");
   const [bagItems, setBagItems] = useState([]);
+
+  const navigate = useNavigate();
+
+  const isPickup = isSelected === "pickup";
+  const isDelivery = isSelected === "delivery";
+
+  const changeLocation = (e) => 
+  {
+    setLocation(e.target.value);
+    console.log(location);
+  }
+
+  const changeAddress = (e) => 
+  {
+    setAddress(e.target.value);
+    console.log(address);
+  }
+
+  const handleLocation = () => 
+  {
+    if (location === "" || location === "Select location") {
+      alert("Please select a location");
+    }
+    else {
+      navigate("/order/menu");
+    }
+  }
+
+  const handleAddress = () => 
+  {
+    if (address === "") {
+      alert("Please enter delivery address");
+    }
+    else {
+      navigate("/order/menu");
+    }
+  }
 
   const addToBag = (menuItem) => 
     {
@@ -28,19 +68,43 @@ function App()
     {
       setBagItems([...bagItems, { product: menuItem, quantity: 1 }]);
     }
+    // console.log(bagItems);
+  }
 
-    console.log(bagItems);
+  const removeFromBag = (menuItem) =>
+  {
+    const updatedCart = bagItems.filter(item => item.product.id !== menuItem.id);
+    setBagItems(updatedCart);
+  }
+
+  const totalAmount = () =>
+  {
+    return bagItems.reduce((total, item) => total + item.product.price * item.quantity, 0);
   }
 
   return (
-    <div>
+    <div className="site-container">
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='menu' element={<Menu />} />
-        <Route path='order' element={<Order />} />
+        <Route path='order' element={<Order isSelected={isSelected}
+                                            setIsSelected={setIsSelected}
+                                            isPickup={isPickup}
+                                            isDelivery={isDelivery}
+                                            changeLocation={changeLocation}
+                                            changeAddress={changeAddress}
+                                            handleLocation={handleLocation}
+                                            handleAddress={handleAddress} />} />
         <Route path='order/menu' element={<Ordermenu addToBag={addToBag} />} />
-        <Route path='order/bag' element={<Bag bagItems={bagItems} setBagItems={setBagItems} />} />
+        <Route path='order/bag' element={<Bag bagItems={bagItems}
+                                              location={location}
+                                              address={address}
+                                              setBagItems={setBagItems} 
+                                              removeFromBag={removeFromBag} 
+                                              totalAmount={totalAmount}
+                                              isSelected={isSelected} />}
+                                               />
         <Route path='reservation' element={<Reservation />} />
       </Routes>
       <Footer />

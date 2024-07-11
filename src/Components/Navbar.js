@@ -34,6 +34,9 @@ const Navbar = () =>
               </li>
             </ul>
           </div>
+          <span className="navbar-text me-5">
+            <Link to="/order/bag"><i class="bi bi-bag-fill" style={{ fontSize: "2rem" }}></i></Link>
+          </span>
         </div>
       </nav>
     </>

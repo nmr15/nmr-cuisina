@@ -68,7 +68,7 @@ const StartOrder = () =>
   )
 }
 
-const Pickup = ({changeLocation, handleSubmit}) =>
+const Pickup = ({changeLocation, handleLocation}) =>
 {
   return (
     <>
@@ -80,7 +80,7 @@ const Pickup = ({changeLocation, handleSubmit}) =>
           <option value="Glendora">Glendora</option>
           <option value="Rancho Cucamonga">Rancho Cucamonga</option>
         </select>
-        <button className="btn-red-small" onClick={() => handleSubmit()}>Continue</button>
+        <button className="btn-red-small" onClick={() => handleLocation()}>Continue</button>
       </div>
     </>
   )
@@ -98,11 +98,24 @@ const Delivery = ({ changeAddress, handleAddress }) =>
   )
 }
 
-const Order = () => 
+const Order = ({isSelected, setIsSelected, isPickup, isDelivery, changeLocation, changeAddress, handleLocation, handleAddress}) => 
 {
   return (
     <>
-      <StartOrder />
+      <div className="container orderstart">
+        <h1 className="heading text-center">Start Your Order</h1>
+        <div className="ordertype d-flex justify-content-center">
+          <div className={isPickup ? "ordertype-card-selected" : "ordertype-card"} id="pickup" tabIndex="1" onClick={() => setIsSelected('pickup')}>
+            <i class="bi bi-bag-fill" style={{ fontSize: "2rem" }}></i>
+            <h5>Pickup</h5>
+          </div>
+          <div className={isDelivery ? "ordertype-card-selected" : "ordertype-card"} id="delivery" tabIndex="2" onClick={() => setIsSelected('delivery')}>
+            <i class="bi bi-scooter" style={{ fontSize: "2rem" }}></i>
+            <h5>Delivery</h5>
+          </div>
+        </div>
+        {isSelected === "pickup" ? <Pickup changeLocation={changeLocation} handleLocation={handleLocation} /> : <Delivery changeAddress={changeAddress} handleAddress={handleAddress} />}
+      </div>
     </>
   )
 }

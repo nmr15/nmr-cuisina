@@ -4,6 +4,12 @@ body, html
   font-family: "DM Sans", sans-serif;
 }
 
+.site-container
+{
+  position: relative;
+  min-height: 100vh;
+}
+
 input:focus, select:focus
 {
   border-color: #000 !important;
@@ -42,7 +48,7 @@ ul
   font-size: 16px;
   background: var(--base-red);
   padding: 6px 12px;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .btn-red-pill
@@ -81,9 +87,7 @@ ul
   transition-property: color, background-color;
 }
 
-.hvr-fade:hover,
-.hvr-fade:focus,
-.hvr-fade:active 
+.hvr-fade:hover 
 {
   background-color: #D63D35;
   color: white;
@@ -288,6 +292,33 @@ ul
 }
 
 /*------------------------------
+            Bag
+---------------------------------*/
+
+.orderbag
+{
+  width: 60%;
+  padding: 2rem;
+  border: 2px solid var(--base-red);
+  border-radius: 10px;
+  /* background-color: lightsteelblue; */
+}
+
+.bag
+{
+  border-bottom: 1px solid #000;
+}
+
+.orderdetails
+{
+  height: 10rem;
+  padding: 1rem;
+  border: 2px solid var(--base-red);
+  border-radius: 10px;
+  /* background-color: lightcoral; */
+}
+
+/*------------------------------
             Reservation
 ---------------------------------*/
 
@@ -319,6 +350,9 @@ ul
 
 .footer 
 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   background-color: #000;
   color: #E9ECEF;
 }
