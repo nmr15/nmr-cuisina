@@ -298,6 +298,7 @@ ul
 .orderbag
 {
   width: 60%;
+  margin-bottom: 5rem;
   padding: 2rem;
   border: 2px solid var(--base-red);
   border-radius: 10px;
@@ -306,12 +307,29 @@ ul
 
 .bag
 {
+  /* height: 9.375rem; */
   border-bottom: 1px solid #000;
+}
+
+.bag-details
+{
+  width: 25rem;
+}
+
+.bag-name
+{
+  vertical-align: top;
+}
+
+.bag-remove
+{
+  text-align: right;
 }
 
 .orderdetails
 {
-  height: 10rem;
+  width: 25%;
+  height: max-content;
   padding: 1rem;
   border: 2px solid var(--base-red);
   border-radius: 10px;
