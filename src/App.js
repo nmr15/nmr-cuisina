@@ -103,8 +103,7 @@ function App()
                                               setBagItems={setBagItems} 
                                               removeFromBag={removeFromBag} 
                                               totalAmount={totalAmount}
-                                              isSelected={isSelected} />}
-                                               />
+                                              isSelected={isSelected} />} />
         <Route path='reservation' element={<Reservation />} />
       </Routes>
       <Footer />
