@@ -32,6 +32,24 @@ const Home = () =>
           </div>
         </div>
       </section>
+      <section className="section-promo">
+        <div className="bg-red">
+          {/* <div className="container"> */}
+            <div className="promo d-md-flex justify-content-between">
+              <div className="promo-text align-self-center">
+                <h1 className="promo-text-heading">Become a member</h1>
+                <h4>Get up to 20% discounts when you join!</h4>
+                <h4>Earn points and rewards</h4>
+                <h4>Receive news about upcoming events</h4>
+                <button className="btn-white">Join now</button>
+              </div>
+              <div className="promo-img ">
+                <img src="/assets/promo.jpg" className="" alt="" />
+              </div>
+            </div>
+          {/* </div> */}
+        </div>
+      </section>
       <section className="section-favorites">
         <div className="container">
           <h1 className="heading text-center">Customer Favorites</h1>
@@ -71,9 +89,6 @@ const Home = () =>
             </div>
           </div>
         </div>
-      </section>
-      <section className="section-reservation">
-        
       </section>
     </>
   )
