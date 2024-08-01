@@ -1,7 +1,26 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
 
 const Bag = ({bagItems, setBagItems, removeFromBag, totalAmount, isSelected, location, address}) => 
 {
+  const [payment, setPayment] = useState({
+    name: "",
+    card: "",
+    month: "",
+    year: "",
+    cvv: ""
+  })
+
+  let paymentInfo = (e) =>
+  {
+    setPayment({ ...payment, [e.target.name]: e.target.value});
+    console.log(payment);
+  }
+  
+
+  const months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+  const years = Array.from({ length: 10 }, (_, i) => new Date().getFullYear() + i);
+
   return (
     <>
       <div className="container d-flex justify-content-around">
@@ -50,10 +69,72 @@ const Bag = ({bagItems, setBagItems, removeFromBag, totalAmount, isSelected, loc
             (
               <>
                   <h5>Order Type: Delivery</h5>
+                  <p>Address: {address}</p>
               </>
             )
           }
-          <p>Total amount: ${totalAmount()}</p>
+          <p className="pb-3 border-bottom border-2">Total amount: ${totalAmount()}</p>
+          <h5>Payment Information</h5>
+          <form>
+            <label htmlFor="name" className="form-label">Name on Card</label>
+            <input 
+              type="text" 
+              className="form-control mb-3" 
+              name="name" 
+              id="name"
+              onChange={(e) => paymentInfo(e)}
+              />
+
+            <label htmlFor="card" className="form-label">Card Number</label>
+            <input 
+              type="tel" 
+              className="form-control mb-3" 
+              name="card" 
+              id="card"
+              maxLength="12"
+              onChange={(e) => paymentInfo(e)}
+            />
+
+            <p className="form-label">Expires on</p>
+            <div className="row mb-3">
+              <div className="col-6">
+                <label htmlFor="month" className="form-label">Month</label>
+                <select name="month" id="month" className="form-select" onChange={(e) => paymentInfo(e)}>
+                  <option></option>
+                  {
+                    months.map((month) => (
+                      <option key={month} value={month}>{month}</option>
+                    ))
+                  }
+                </select>
+              </div>
+              <div className="col-6">
+                <label htmlFor="year" className="form-label ">Year</label>
+                <select name="year" id="year" className="form-select" onChange={(e) => paymentInfo(e)}>
+                  <option value=""></option>
+                  {
+                    years.map((years) => (
+                      <option key={years} value={years}>{years}</option>
+                    ))
+                  }
+                </select>
+              </div>
+              
+            </div>
+            
+
+            <label htmlFor="cvv" className="form-label">CVV</label>
+            <input 
+              type="tel"  
+              className="form-control mb-3" 
+              name="cvv" 
+              id="cvv"
+              maxLength="3"
+              onChange={(e) => paymentInfo(e)}
+            />
+
+            <button className="btn-red-small" type="submit">Checkout</button>
+          </form>
         </div>
         
       </div>

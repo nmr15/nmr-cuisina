@@ -9,6 +9,7 @@ import Ordermenu from './Components/Ordermenu';
 import Bag from './Components/Bag';
 import Reservation from './Components/Reservation';
 import Footer from './Components/Footer';
+import Checkout from "./Components/Checkout";
 
 function App() 
 {
@@ -84,7 +85,7 @@ function App()
 
   return (
     <div className="site-container">
-      <Navbar />
+      <Navbar bagItems={bagItems} />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='menu' element={<Menu />} />
@@ -103,7 +104,7 @@ function App()
                                               setBagItems={setBagItems} 
                                               removeFromBag={removeFromBag} 
                                               totalAmount={totalAmount}
-                                              isSelected={isSelected} />} />
+                                              isSelected={isSelected} />} />                                     
         <Route path='reservation' element={<Reservation />} />
       </Routes>
       <Footer />
