@@ -4,6 +4,11 @@ body, html
   font-family: "DM Sans", sans-serif;
 }
 
+a
+{
+  text-decoration: none;
+}
+
 .site-container
 {
   position: relative;
@@ -387,6 +392,11 @@ ul
 .reserve-container
 {
   padding: 200px 0;
+}
+
+.reserve-container-complete
+{
+  padding: 200px 0 240px 0
 }
 
 .reserve
