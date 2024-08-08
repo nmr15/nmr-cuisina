@@ -7,7 +7,11 @@ const Home = () =>
       <section className="section-banner">
         <div className="banner">
           <div className="banner-text">
-            {/* <h1>Lorem ipsum</h1> */}
+            <p>Savor the Flavor</p>
+          </div>
+          <div className="banner-button">
+            <Link to="/menu" className="btn-red banner-button-1">View Menu</Link>
+            <Link to="/reservation" className="btn-red banner-button-2">Reserve a Table</Link>
           </div>
         </div>
       </section>

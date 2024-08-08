@@ -24,12 +24,14 @@ const Reservation = () =>
   {
     register,
     handleSubmit,
+    reset,
     formState: {errors}
   } = useForm();
 
   const onSubmit = (data) =>
   {
     setIsSubmitted(false);
+    reset();
   }
 
   const newReservation = () =>

@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useForm } from "react-hook-form"
 import { Link } from "react-router-dom"
 
 const Bag = ({bagItems, setBagItems, removeFromBag, totalAmount, isSelected, location, address}) => 
@@ -11,13 +12,25 @@ const Bag = ({bagItems, setBagItems, removeFromBag, totalAmount, isSelected, loc
     cvv: ""
   })
 
+  const
+  {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors }
+  } = useForm();
+
   let paymentInfo = (e) =>
   {
     setPayment({ ...payment, [e.target.name]: e.target.value});
     console.log(payment);
   }
-  
 
+  const onSubmit = () =>
+  {
+
+  }
+  
   const months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
   const years = Array.from({ length: 10 }, (_, i) => new Date().getFullYear() + i);
 
@@ -75,7 +88,7 @@ const Bag = ({bagItems, setBagItems, removeFromBag, totalAmount, isSelected, loc
           }
           <p className="pb-3 border-bottom border-2">Total amount: ${totalAmount()}</p>
           <h5>Payment Information</h5>
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor="name" className="form-label">Name on Card</label>
             <input 
               type="text" 
@@ -83,34 +96,72 @@ const Bag = ({bagItems, setBagItems, removeFromBag, totalAmount, isSelected, loc
               name="name" 
               id="name"
               onChange={(e) => paymentInfo(e)}
+              {...register("name", {
+                required: true,
+              })}
               />
+            {errors.name && errors.name.type === "required" && (
+              <p className="errorMsg text-danger">Name is required.</p>
+            )}
 
             <label htmlFor="card" className="form-label">Card Number</label>
             <input 
-              type="tel" 
+              type="number" 
               className="form-control mb-3" 
               name="card" 
               id="card"
-              maxLength="12"
               onChange={(e) => paymentInfo(e)}
+              {...register("card", {
+                required: true,
+                valueAsNumber: true,
+                maxLength: 12,
+              })}
             />
+            {errors.name && errors.name.type === "required" && (
+              <p className="errorMsg text-danger">Card number is required.</p>
+            )}
+            {errors.name && errors.name.type === "valueAsNumber" && (
+              <p className="errorMsg text-danger">Numbers only.</p>
+            )}
+            {errors.name && errors.name.type === "maxLength" && (
+              <p className="errorMsg text-danger">Card number must be 12 digits.</p>
+            )}
 
             <p className="form-label">Expires on</p>
             <div className="row mb-3">
               <div className="col-6">
                 <label htmlFor="month" className="form-label">Month</label>
-                <select name="month" id="month" className="form-select" onChange={(e) => paymentInfo(e)}>
-                  <option></option>
+                <select 
+                  name="month" 
+                  id="month" 
+                  className="form-select" 
+                  onChange={(e) => paymentInfo(e)}
+                  {...register("month", {
+                    required: true
+                  })}
+                  >
+                  <option value=""></option>
                   {
                     months.map((month) => (
                       <option key={month} value={month}>{month}</option>
                     ))
                   }
                 </select>
+                {errors.month && errors.month.type === "required" && (
+                  <p className="errorMsg text-danger">Month is required.</p>
+                )}
               </div>
               <div className="col-6">
                 <label htmlFor="year" className="form-label ">Year</label>
-                <select name="year" id="year" className="form-select" onChange={(e) => paymentInfo(e)}>
+                <select 
+                  name="year" 
+                  id="year" 
+                  className="form-select" 
+                  onChange={(e) => paymentInfo(e)}
+                  {...register("year", {
+                    required: true
+                  })}
+                  >
                   <option value=""></option>
                   {
                     years.map((years) => (
@@ -118,6 +169,9 @@ const Bag = ({bagItems, setBagItems, removeFromBag, totalAmount, isSelected, loc
                     ))
                   }
                 </select>
+                {errors.year && errors.year.type === "required" && (
+                  <p className="errorMsg text-danger">Location is required.</p>
+                )}
               </div>
               
             </div>
@@ -125,13 +179,26 @@ const Bag = ({bagItems, setBagItems, removeFromBag, totalAmount, isSelected, loc
 
             <label htmlFor="cvv" className="form-label">CVV</label>
             <input 
-              type="tel"  
+              type="number"  
               className="form-control mb-3" 
               name="cvv" 
               id="cvv"
-              maxLength="3"
               onChange={(e) => paymentInfo(e)}
+              {...register("cvv", {
+                required: true,
+                valueAsNumber: true,
+                maxLength: 3,
+              })}
             />
+            {errors.cvv && errors.cvv.type === "required" && (
+              <p className="errorMsg text-danger">CVV is required.</p>
+            )}
+            {errors.cvv && errors.cvv.type === "valueAsNumber" && (
+              <p className="errorMsg text-danger">Numbers only.</p>
+            )}
+            {errors.cvv && errors.cvv.type === "maxLength" && (
+              <p className="errorMsg text-danger">CVV must be 3 digits.</p>
+            )}
 
             <button className="btn-red-small" type="submit">Checkout</button>
           </form>

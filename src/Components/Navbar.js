@@ -26,9 +26,23 @@ const Navbar = ({bagItems}) =>
               <li className="nav-item">
                 <Link to="/menu" className="nav-link">Menu</Link>
               </li>
-              <li className="nav-item">
-                <Link to="/order" className="nav-link">Order</Link>
-              </li>
+              {
+                bagItems.length === 0 ? 
+                (
+                  <li className="nav-item">
+                    <Link to="/order" className="nav-link">Order</Link>
+                  </li>
+                )
+
+                :
+
+                (
+                  <li className="nav-item">
+                    <Link to="/order/menu" className="nav-link">Order</Link>
+                  </li>
+                )
+              }
+              
               <li className="nav-item">
                 <Link to="/reservation" className="nav-link">Reservations</Link>
               </li>

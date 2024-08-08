@@ -51,9 +51,6 @@ const Ordermenu = ({addToBag}) =>
           </div>
         </MediaQuery>
       </section>
-
-      <Link to="/order/bag">View Bag</Link>
-
       <section className="section-menu">
         <div className="container">
           {/* <h2>{menuItems ? menuItems[0].category : "Appetizers"}</h2> */}
