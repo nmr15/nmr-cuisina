@@ -8,11 +8,13 @@ const Home = () =>
         <div className="banner">
           <div className="banner-text">
             <p>Savor the Flavor</p>
-          </div>
-          <div className="banner-button">
             <Link to="/menu" className="btn-red banner-button-1">View Menu</Link>
             <Link to="/reservation" className="btn-red banner-button-2">Reserve a Table</Link>
           </div>
+          {/* <div className="banner-button">
+            <Link to="/menu" className="btn-red banner-button-1">View Menu</Link>
+            <Link to="/reservation" className="btn-red banner-button-2">Reserve a Table</Link>
+          </div> */}
         </div>
       </section>
       <section className="section-aboutus">
