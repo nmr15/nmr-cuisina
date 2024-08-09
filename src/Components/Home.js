@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import MediaQuery from "react-responsive"
 
 const Home = () => 
 {
@@ -8,8 +9,14 @@ const Home = () =>
         <div className="banner">
           <div className="banner-text">
             <p>Savor the Flavor</p>
-            <Link to="/menu" className="btn-red banner-button-1">View Menu</Link>
-            <Link to="/reservation" className="btn-red banner-button-2">Reserve a Table</Link>
+            <MediaQuery minWidth={992}>
+              <Link to="/menu" className="btn-red banner-button-1">View Menu</Link>
+              <Link to="/reservation" className="btn-red banner-button-2">Reserve a Table</Link>
+            </MediaQuery>
+            <MediaQuery maxWidth={768}>
+              <Link to="/menu" className="btn-red-small banner-button-1">View Menu</Link>
+              <Link to="/reservation" className="btn-red-small banner-button-2">Reserve a Table</Link>
+            </MediaQuery>
           </div>
           {/* <div className="banner-button">
             <Link to="/menu" className="btn-red banner-button-1">View Menu</Link>

@@ -36,11 +36,11 @@ const Bag = ({bagItems, setBagItems, removeFromBag, totalAmount, isSelected, loc
 
   return (
     <>
-      <div className="container d-flex justify-content-around">
+      <div className="container d-lg-flex justify-content-around">
         <div className="orderbag">
           <div>
-            <h1 className="heading d-inline">Your Bag</h1>
-            <Link to="/order/menu" className="btn-red-small ms-5">Add more items</Link>
+            <h1 className="heading d-lg-inline">Your Bag</h1>
+            <Link to="/order/menu" className="btn-red-small ms-lg-5">Add more items</Link>
           </div>
           
           {
@@ -57,8 +57,6 @@ const Bag = ({bagItems, setBagItems, removeFromBag, totalAmount, isSelected, loc
                   
                   <div>
                     <p>Quantity: {item.quantity}</p>
-                    
-                    
                   </div>
                 </div>
                 <h5 className="bag-remove ptr" onClick={() => removeFromBag(item.product)}>Remove</h5>

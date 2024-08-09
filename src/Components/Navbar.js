@@ -48,7 +48,7 @@ const Navbar = ({bagItems}) =>
               </li>
             </ul>
           </div>
-          <span className={bagItems.length === 0 ? "navbar-text me-5 d-none" : "navbar-text me-5"}>
+          <span className={bagItems.length === 0 ? "navbar-text me-5 d-none" : "navbar-text "}>
             <Link to="/order/bag"><i class="bi bi-bag-fill" style={{ fontSize: "2rem" }}></i></Link>
           </span>
         </div>

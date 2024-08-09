@@ -9,7 +9,6 @@ import Ordermenu from './Components/Ordermenu';
 import Bag from './Components/Bag';
 import Reservation from './Components/Reservation';
 import Footer from './Components/Footer';
-import Checkout from "./Components/Checkout";
 
 function App() 
 {
